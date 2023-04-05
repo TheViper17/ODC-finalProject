@@ -212,6 +212,7 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
+  - Alamofire (5.6.4)
   - AppAuth (1.6.0):
     - AppAuth/Core (= 1.6.0)
     - AppAuth/ExternalUserAgent (= 1.6.0)
@@ -356,6 +357,7 @@ PODS:
   - SwiftCheckBox (0.1.2)
 
 DEPENDENCIES:
+  - Alamofire
   - FirebaseAnalytics
   - FirebaseAuth
   - FirebaseFirestore
@@ -366,6 +368,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - abseil
+    - Alamofire
     - AppAuth
     - BoringSSL-GRPC
     - FirebaseAnalytics
@@ -390,6 +393,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   AppAuth: 8fca6b5563a5baef2c04bee27538025e4ceb2add
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   FirebaseAnalytics: cd3bd84d722a24a8923918af8af8e5236f615d77
@@ -412,6 +416,6 @@ SPEC CHECKSUMS:
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   SwiftCheckBox: 82e35d6a5cfb47d00c9b7f841d9205a90e858f4c
 
-PODFILE CHECKSUM: ec83486c599b71f1cd8c65fb0746f07b4eb8da39
+PODFILE CHECKSUM: 00a8eec1ce671b21105e5b802f27b6f812793e2c
 
 COCOAPODS: 1.12.0

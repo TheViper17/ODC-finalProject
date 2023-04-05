@@ -20,15 +20,19 @@ class SecondSplashController: UIViewController {
 
     @IBAction func buttonTapped(_ sender: UIButton) {
         
-        if sender.tag == 1 {
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: LoginController.ID) as! LoginController
-            self.navigationController?.pushViewController(vc, animated: true)
-        }else{
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: SignupController.ID) as! SignupController
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: SuccessfulController.ID) as! SuccessfulController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        if sender.tag == 1 {
+//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyBoard.instantiateViewController(withIdentifier: LoginController.ID) as! LoginController
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }else{
+//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyBoard.instantiateViewController(withIdentifier: SignupController.ID) as! SignupController
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
         
 //        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
 //        let vc = storyBoard.instantiateViewController(withIdentifier: OnboardingController.ID) as! OnboardingController

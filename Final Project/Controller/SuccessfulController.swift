@@ -18,4 +18,11 @@ class SuccessfulController: UIViewController {
         
     }
 
+    @IBAction func startShoppingTapped(_ sender: UIButton) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: HostController.ID) as! HostController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
 }

@@ -18,6 +18,8 @@
 		D33CCC3E29D608CE00F9CCFC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33CCC3C29D608CE00F9CCFC /* Main.storyboard */; };
 		D33CCC4029D608D000F9CCFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D33CCC3F29D608D000F9CCFC /* Assets.xcassets */; };
 		D33CCC4329D608D000F9CCFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D33CCC4129D608D000F9CCFC /* LaunchScreen.storyboard */; };
+		D34C673529DC9A2800659480 /* APIUrl's.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C673429DC9A2800659480 /* APIUrl's.swift */; };
+		D34C673729DC9AA600659480 /* APIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C673629DC9AA600659480 /* APIModel.swift */; };
 		D351F90729D61150000CC9A4 /* SecondSplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351F90629D61150000CC9A4 /* SecondSplashController.swift */; };
 		D351F90929D613B8000CC9A4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351F90829D613B8000CC9A4 /* Extensions.swift */; };
 		D351F90B29D61731000CC9A4 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351F90A29D61731000CC9A4 /* OnboardingController.swift */; };
@@ -59,6 +61,8 @@
 		D33CCC3F29D608D000F9CCFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D33CCC4229D608D000F9CCFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D33CCC4429D608D000F9CCFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D34C673429DC9A2800659480 /* APIUrl's.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIUrl's.swift"; sourceTree = "<group>"; };
+		D34C673629DC9AA600659480 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
 		D351F90629D61150000CC9A4 /* SecondSplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSplashController.swift; sourceTree = "<group>"; };
 		D351F90829D613B8000CC9A4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D351F90A29D61731000CC9A4 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				D37C350E29D727F00022E19D /* Models.swift */,
+				D34C673629DC9AA600659480 /* APIModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				D351F90829D613B8000CC9A4 /* Extensions.swift */,
+				D34C673429DC9A2800659480 /* APIUrl's.swift */,
 			);
 			path = Helper_Files;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				D351F90D29D61891000CC9A4 /* OnboardingCell.swift in Sources */,
 				D37C352729D75B860022E19D /* CategoriesController.swift in Sources */,
 				D37C352329D75B260022E19D /* HomeController.swift in Sources */,
+				D34C673729DC9AA600659480 /* APIModel.swift in Sources */,
 				D33CCC3B29D608CE00F9CCFC /* SplashController.swift in Sources */,
 				D37C351829D738460022E19D /* SignupController.swift in Sources */,
 				D37C350F29D727F00022E19D /* Models.swift in Sources */,
@@ -345,6 +352,7 @@
 				D37C351629D72FBF0022E19D /* LoginController.swift in Sources */,
 				D37C352529D75B550022E19D /* CartController.swift in Sources */,
 				D35C82BE29D84588002C21A5 /* CategoriesCell.swift in Sources */,
+				D34C673529DC9A2800659480 /* APIUrl's.swift in Sources */,
 				D351F90B29D61731000CC9A4 /* OnboardingController.swift in Sources */,
 				D33CCC3729D608CE00F9CCFC /* AppDelegate.swift in Sources */,
 				D37C351A29D73CA70022E19D /* SuccessfulController.swift in Sources */,

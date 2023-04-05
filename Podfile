@@ -11,6 +11,7 @@ pod 'FirebaseAnalytics'
 pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'GoogleSignIn'
+pod 'Alamofire'
 
   # Pods for Final Project
 

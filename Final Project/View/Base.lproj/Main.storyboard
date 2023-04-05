@@ -863,6 +863,9 @@ with our them &amp; condication.</string>
                                         <state key="normal" image="navigationBarHome">
                                             <color key="titleColor" systemColor="systemPurpleColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="navigationTapped:" destination="9A1-qi-r5L" eventType="touchUpInside" id="oQo-k8-8LJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdK-Vu-nbW">
                                         <rect key="frame" x="103.5" y="0.0" width="103.5" height="80"/>
@@ -871,6 +874,9 @@ with our them &amp; condication.</string>
                                         <state key="normal" image="navigationBarCart">
                                             <color key="titleColor" systemColor="systemPurpleColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="navigationTapped:" destination="9A1-qi-r5L" eventType="touchUpInside" id="xaT-rD-c0J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EW-M9-zaf">
                                         <rect key="frame" x="207" y="0.0" width="103.5" height="80"/>
@@ -879,6 +885,9 @@ with our them &amp; condication.</string>
                                         <state key="normal" image="categories2">
                                             <color key="titleColor" systemColor="systemPurpleColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="navigationTapped:" destination="9A1-qi-r5L" eventType="touchUpInside" id="27e-6g-4mu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKh-Js-fIH">
                                         <rect key="frame" x="310.5" y="0.0" width="103.5" height="80"/>
@@ -887,6 +896,9 @@ with our them &amp; condication.</string>
                                         <state key="normal" image="navigationBarProfile">
                                             <color key="titleColor" systemColor="systemPurpleColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="navigationTapped:" destination="9A1-qi-r5L" eventType="touchUpInside" id="pNd-bG-xxH"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -989,7 +1001,7 @@ with our them &amp; condication.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JeP-hl-Pzh"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="WDY-VF-nE6">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WDY-VF-nE6">
                                     <size key="itemSize" width="80" height="30"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1013,9 +1025,15 @@ with our them &amp; condication.</string>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="14"/>
                                                         </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                            <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                     <connections>
-                                                        <action selector="ButtonTapped:" destination="Wdx-CW-u7c" eventType="touchUpInside" id="XFa-NN-YeQ"/>
+                                                        <action selector="ButtonTapped:" destination="Wdx-CW-u7c" eventType="touchUpInside" id="DRV-rY-lGF"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1030,7 +1048,7 @@ with our them &amp; condication.</string>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="80" height="30"/>
                                         <connections>
-                                            <outlet property="buttonOutler" destination="k8a-9r-lA0" id="hTR-iF-YoC"/>
+                                            <outlet property="buttonOutlet" destination="k8a-9r-lA0" id="bIv-mC-PyP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1161,6 +1179,7 @@ with our them &amp; condication.</string>
                     </view>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="Qhx-gx-zRA" id="kLQ-PP-DdH"/>
+                        <outlet property="mainCategoriesCollectionView" destination="Qhx-gx-zRA" id="3vd-LR-HCf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxT-Qc-0DM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1500,6 +1519,21 @@ with our them &amp; condication.</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lC-AA-95o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2473.913043478261" y="1681.4732142857142"/>
+        </scene>
+        <!--Profile Controller-->
+        <scene sceneID="ov0-6K-Olw">
+            <objects>
+                <viewController storyboardIdentifier="ProfileController" id="jXP-xD-OoB" customClass="ProfileController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EB0-yK-aZA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GPf-uf-jI2"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lY8-FV-bxP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3332" y="1681"/>
         </scene>
         <!--Categories Page Controller-->
         <scene sceneID="pLX-jT-roY">
@@ -2067,6 +2101,7 @@ our app and start working in it.</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="buttonTapped:" destination="a0M-wr-30M" eventType="touchUpInside" id="gDo-Ue-SGd"/>
+                                    <action selector="startShoppingTapped:" destination="4ei-8A-TcL" eventType="touchUpInside" id="RH5-Bb-mfC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2140,6 +2175,9 @@ our app and start working in it.</string>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

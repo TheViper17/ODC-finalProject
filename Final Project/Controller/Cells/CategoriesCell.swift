@@ -10,6 +10,7 @@ import UIKit
 class CategoriesCell: UICollectionViewCell {
     
     static let ID = String(describing: CategoriesCell.self)
+    
     @IBOutlet weak var buttonOutlet: UIButton!
     
     @IBAction func ButtonTapped(_ sender: UIButton) {
