@@ -14,6 +14,5 @@ class ProductsCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var loveOutlet: UIButton!
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var price: UILabel!
 }

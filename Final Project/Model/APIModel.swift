@@ -22,3 +22,19 @@ struct Description : Decodable {
     let id : Int
     let name : String
 }
+
+// MARK: - Home Page Categoties Detailes collection view
+
+struct MainCategoriesDescription : Decodable {
+    let data : CategoriesDetailes
+}
+
+struct CategoriesDetailes : Decodable {
+    let data : [DataDescription]
+}
+
+struct DataDescription : Decodable {
+    let price : Double
+    let name : String
+    let image : String
+}

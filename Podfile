@@ -12,6 +12,7 @@ pod 'FirebaseAuth'
 pod 'FirebaseFirestore'
 pod 'GoogleSignIn'
 pod 'Alamofire'
+pod 'Kingfisher'
 
   # Pods for Final Project
 
