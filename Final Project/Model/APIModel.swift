@@ -21,6 +21,7 @@ struct CategoriesDescription : Decodable {
 struct Description : Decodable {
     let id : Int
     let name : String
+    let image : String
 }
 
 // MARK: - Home Page Categoties Detailes collection view

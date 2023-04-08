@@ -12,12 +12,12 @@ import Kingfisher
 class HomeController: UIViewController {
 
     static let ID = String(describing: HomeController.self)
-    let headers: HTTPHeaders = ["lang" : "en"]
+    static let headers: HTTPHeaders = ["lang" : "en"]
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var categoriesDetailesCollectionView: UICollectionView!
 
-    var categoryNames:[Description] = []
+    static var categoryNames:[Description] = []
     var categoryDetailes:[DataDescription] = []
     
     override func viewDidLoad() {
@@ -31,12 +31,13 @@ class HomeController: UIViewController {
     
     func getMainCategories() {
         
-        AF.request(API.BASE_URL + "categories" , method: .get , headers: headers).responseDecodable(of: MainCategoriesModel.self){ res in
+        AF.request(API.BASE_URL + "categories" , method: .get , headers: HomeController.headers).responseDecodable(of: MainCategoriesModel.self){ res in
             //print("into main categories api")
             
             switch res.result {
             case .success(let categories):
-                self.categoryNames = categories.data.data
+                HomeController.categoryNames = categories.data.data
+                CategoriesController.mainCategoryNames = categories.data.data
                 self.categoriesCollectionView.reloadData()
             case .failure(let er):
                 print("failed to get main category")
@@ -47,7 +48,7 @@ class HomeController: UIViewController {
     
     func getCategoriesDetailes(index:Int) {
         
-        AF.request(API.BASE_URL + "categories" + "/\(index)", method: .get , headers: headers).responseDecodable(of: MainCategoriesDescription.self){ res in
+        AF.request(API.BASE_URL + "categories" + "/\(index)", method: .get , headers: HomeController.headers).responseDecodable(of: MainCategoriesDescription.self){ res in
             
             switch res.result {
             case .success(let categoriesDetailes):
@@ -69,7 +70,7 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == self.categoriesCollectionView {
-            return categoryNames.count
+            return HomeController.categoryNames.count
         }else{
             return categoryDetailes.count
         }
@@ -78,29 +79,27 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.categoriesCollectionView {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCell.ID, for: indexPath) as! CategoriesCell
-
-            cell.categoryTitle.text = categoryNames[indexPath.row].name
+            CategoriesController.getCategoriesDetailesCount(index: HomeController.categoryNames[indexPath.row].id)
             
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCell.ID, for: indexPath) as! CategoriesCell
+            cell.categoryTitle.text = HomeController.categoryNames[indexPath.row].name
             return cell
+            
         }else {
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCell.ID, for: indexPath) as! ProductsCell
-
             cell.title.text = categoryDetailes[indexPath.row].name
             cell.price.text = "$ \(categoryDetailes[indexPath.row].price)"
             cell.image.kf.setImage(with: URL(string: categoryDetailes[indexPath.row].image))
-            
             return cell
         }
-        
-
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         if collectionView == categoriesCollectionView {
             print("maincollectionviewtapped")
-            getCategoriesDetailes(index: categoryNames[indexPath.row].id)
+            getCategoriesDetailes(index: HomeController.categoryNames[indexPath.row].id)
         }else{
             print("3aaash ya bjoon")
         }
