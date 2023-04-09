@@ -61,9 +61,9 @@ class HomeController: UIViewController {
         }
         
     }
-    
 
 }
+
 
 extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate {
     
