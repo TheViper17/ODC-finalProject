@@ -15,7 +15,7 @@ class CategoriesPageController: UIViewController {
     
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     @IBOutlet weak var categoryTitle: UILabel!
-    var categoryPageDetailes:[DataDescription] = []
+    static var categoryPageDetailes:[DataDescription] = []
     var pageTitle = "Title"
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ class CategoriesPageController: UIViewController {
             //print("into number call")
             switch res.result {
             case .success(let categoriesDetailes):
-                self.categoryPageDetailes = categoriesDetailes.data.data
+                CategoriesPageController.categoryPageDetailes = categoriesDetailes.data.data
                 //print(categoriesDetailes.data.data.count)
             case .failure(let er):
                 print("failed to get main category detailes")
@@ -57,15 +57,15 @@ class CategoriesPageController: UIViewController {
 extension CategoriesPageController : UICollectionViewDataSource , UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryPageDetailes.count
+        return CategoriesPageController.categoryPageDetailes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsPageCell.ID, for: indexPath) as! ProductsPageCell
-        cell.title.text = categoryPageDetailes[indexPath.row].name
-        cell.price.text = "$ \(categoryPageDetailes[indexPath.row].price)"
-        cell.image.kf.setImage(with: URL(string: categoryPageDetailes[indexPath.row].image))
+        cell.title.text = CategoriesPageController.categoryPageDetailes[indexPath.row].name
+        cell.price.text = "$ \(CategoriesPageController.categoryPageDetailes[indexPath.row].price)"
+        cell.image.kf.setImage(with: URL(string: CategoriesPageController.categoryPageDetailes[indexPath.row].image))
         return cell
         
     }
@@ -73,10 +73,12 @@ extension CategoriesPageController : UICollectionViewDataSource , UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let vc = storyboard?.instantiateViewController(withIdentifier: ProductsDescriptionController.ID) as! ProductsDescriptionController
-        vc.pageCells.append(categoryPageDetailes[indexPath.row].image)
-        vc.pageCells.append(contentsOf: categoryPageDetailes[indexPath.row].images)
-        vc.pageItemTitle = categoryPageDetailes[indexPath.row].name
-        vc.pageItemDescription = categoryPageDetailes[indexPath.row].description
+        vc.pageCells.append(CategoriesPageController.categoryPageDetailes[indexPath.row].image)
+        vc.pageCells.append(contentsOf: CategoriesPageController.categoryPageDetailes[indexPath.row].images)
+        vc.pageItemTitle = CategoriesPageController.categoryPageDetailes[indexPath.row].name
+        vc.pageItemDescription = CategoriesPageController.categoryPageDetailes[indexPath.row].description
+        vc.pageItemPrice = "$ \(CategoriesPageController.categoryPageDetailes[indexPath.row].price)"
+        vc.itemID = HomeController.categoryNames[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
         
     }

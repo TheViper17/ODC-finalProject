@@ -16,9 +16,12 @@ class ProductsDescriptionController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var itemTitle: UILabel!
     @IBOutlet weak var itemDescription: UITextView!
+    @IBOutlet weak var itemPrice: UILabel!
     
     var pageItemTitle = "title"
     var pageItemDescription = "itemDescription"
+    var pageItemPrice = "$ 198.00"
+    var itemID = 0
     
     var pageCells : [String] = []
     
@@ -40,6 +43,12 @@ class ProductsDescriptionController: UIViewController {
 
     @IBAction func backTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    
+    @IBAction func addToCartTapped(_ sender: UIButton) {
+        CartController.getCartData(index: itemID)
+        print("added")
     }
 }
 

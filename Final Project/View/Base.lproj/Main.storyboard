@@ -1184,14 +1184,16 @@ with our them &amp; condication.</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAu-QR-uiz">
-                                <rect key="frame" x="349" y="84" width="45" height="45"/>
+                                <rect key="frame" x="349" y="69" width="45" height="45"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="P0X-8Y-6jS"/>
                                     <constraint firstAttribute="width" constant="45" id="y2a-Id-JLn"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="cartIcon"/>
+                                <state key="normal" image="cartIcon">
+                                    <color key="titleShadowColor" systemColor="systemGrayColor"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -1202,7 +1204,7 @@ with our them &amp; condication.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qNq-yA-XPu">
-                                <rect key="frame" x="379" y="84" width="15" height="15"/>
+                                <rect key="frame" x="379" y="69" width="15" height="15"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="15" id="GuP-Jo-w1X"/>
@@ -1218,15 +1220,15 @@ with our them &amp; condication.</string>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8oV-zl-QE4">
-                                <rect key="frame" x="20" y="134" width="68" height="21.5"/>
+                                <rect key="frame" x="20" y="104" width="68" height="21.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qc0-Lw-dQa">
-                                <rect key="frame" x="20" y="175.5" width="374" height="535"/>
+                                <rect key="frame" x="20" y="150.5" width="374" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8sG-gc-bdv">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8sG-gc-bdv">
                                     <size key="itemSize" width="374" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -1246,14 +1248,14 @@ with our them &amp; condication.</string>
                                                         <constraint firstAttribute="width" constant="100" id="MTe-5R-Chn"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roller Rabbit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCC-8l-fXX">
-                                                    <rect key="frame" x="108" y="8" width="114.5" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Roller Rabbit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCC-8l-fXX">
+                                                    <rect key="frame" x="112" y="12" width="250" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 198.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukr-kP-gMt">
-                                                    <rect key="frame" x="108" y="68" width="80.5" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 198.00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ukr-kP-gMt">
+                                                    <rect key="frame" x="112" y="64" width="172" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1297,13 +1299,15 @@ with our them &amp; condication.</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="C99-fe-Sd8" secondAttribute="trailing" constant="8" id="4d4-XK-1VF"/>
-                                                <constraint firstItem="wCC-8l-fXX" firstAttribute="leading" secondItem="ray-Y4-FYN" secondAttribute="trailing" constant="8" id="8vs-6K-uHM"/>
+                                                <constraint firstAttribute="trailing" secondItem="wCC-8l-fXX" secondAttribute="trailing" constant="12" id="8Tl-bA-hZF"/>
+                                                <constraint firstItem="wCC-8l-fXX" firstAttribute="leading" secondItem="ray-Y4-FYN" secondAttribute="trailing" constant="12" id="8vs-6K-uHM"/>
                                                 <constraint firstItem="ray-Y4-FYN" firstAttribute="top" secondItem="fDV-iu-IbZ" secondAttribute="top" id="Gs9-Q1-yMC"/>
                                                 <constraint firstItem="ray-Y4-FYN" firstAttribute="leading" secondItem="fDV-iu-IbZ" secondAttribute="leading" id="S6W-l8-pEm"/>
-                                                <constraint firstItem="ukr-kP-gMt" firstAttribute="leading" secondItem="ray-Y4-FYN" secondAttribute="trailing" constant="8" id="SWA-aE-q6y"/>
-                                                <constraint firstAttribute="bottom" secondItem="ukr-kP-gMt" secondAttribute="bottom" constant="8" id="XcY-Rh-sIJ"/>
+                                                <constraint firstItem="ukr-kP-gMt" firstAttribute="leading" secondItem="ray-Y4-FYN" secondAttribute="trailing" constant="12" id="SWA-aE-q6y"/>
+                                                <constraint firstAttribute="bottom" secondItem="ukr-kP-gMt" secondAttribute="bottom" constant="12" id="XcY-Rh-sIJ"/>
+                                                <constraint firstItem="C99-fe-Sd8" firstAttribute="leading" secondItem="ukr-kP-gMt" secondAttribute="trailing" constant="12" id="b00-Js-HIY"/>
                                                 <constraint firstAttribute="bottom" secondItem="C99-fe-Sd8" secondAttribute="bottom" constant="8" id="j6R-zB-r4N"/>
-                                                <constraint firstItem="wCC-8l-fXX" firstAttribute="top" secondItem="fDV-iu-IbZ" secondAttribute="top" constant="8" id="sEe-RT-KJX"/>
+                                                <constraint firstItem="wCC-8l-fXX" firstAttribute="top" secondItem="fDV-iu-IbZ" secondAttribute="top" constant="12" id="sEe-RT-KJX"/>
                                                 <constraint firstAttribute="bottom" secondItem="ray-Y4-FYN" secondAttribute="bottom" id="whQ-7N-Lle"/>
                                             </constraints>
                                         </collectionViewCellContentView>
@@ -1380,23 +1384,23 @@ with our them &amp; condication.</string>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tid-bv-sqZ"/>
-                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="W87-KA-G6F" firstAttribute="top" secondItem="qc0-Lw-dQa" secondAttribute="bottom" constant="20" id="14D-MK-aUR"/>
+                            <constraint firstItem="W87-KA-G6F" firstAttribute="top" secondItem="qc0-Lw-dQa" secondAttribute="bottom" constant="30" id="14D-MK-aUR"/>
                             <constraint firstItem="Tid-bv-sqZ" firstAttribute="trailing" secondItem="qc0-Lw-dQa" secondAttribute="trailing" constant="20" id="8ed-0d-29y"/>
                             <constraint firstItem="Tid-bv-sqZ" firstAttribute="trailing" secondItem="xss-Nb-mBG" secondAttribute="trailing" constant="20" id="AUO-AL-K4O"/>
                             <constraint firstItem="qc0-Lw-dQa" firstAttribute="leading" secondItem="Tid-bv-sqZ" secondAttribute="leading" constant="20" id="BA0-b1-2bv"/>
-                            <constraint firstItem="PAu-QR-uiz" firstAttribute="top" secondItem="Tid-bv-sqZ" secondAttribute="top" constant="40" id="EmR-u1-aWS"/>
+                            <constraint firstItem="PAu-QR-uiz" firstAttribute="top" secondItem="Tid-bv-sqZ" secondAttribute="top" constant="25" id="EmR-u1-aWS"/>
                             <constraint firstItem="xss-Nb-mBG" firstAttribute="top" secondItem="6sI-wl-Cn8" secondAttribute="bottom" constant="25" id="IWl-0l-Tm5"/>
                             <constraint firstItem="Tid-bv-sqZ" firstAttribute="trailing" secondItem="W87-KA-G6F" secondAttribute="trailing" constant="20" id="K6c-kI-SaK"/>
-                            <constraint firstItem="qNq-yA-XPu" firstAttribute="top" secondItem="Tid-bv-sqZ" secondAttribute="top" constant="40" id="MSx-6p-DLs"/>
+                            <constraint firstItem="qNq-yA-XPu" firstAttribute="top" secondItem="Tid-bv-sqZ" secondAttribute="top" constant="25" id="MSx-6p-DLs"/>
                             <constraint firstItem="6sI-wl-Cn8" firstAttribute="leading" secondItem="Tid-bv-sqZ" secondAttribute="leading" constant="20" id="REB-q9-mA5"/>
                             <constraint firstItem="xss-Nb-mBG" firstAttribute="top" secondItem="W87-KA-G6F" secondAttribute="bottom" constant="25" id="SkZ-PP-PgG"/>
-                            <constraint firstItem="8oV-zl-QE4" firstAttribute="top" secondItem="Tid-bv-sqZ" secondAttribute="top" constant="90" id="UA9-Lb-QYM"/>
+                            <constraint firstItem="8oV-zl-QE4" firstAttribute="top" secondItem="Tid-bv-sqZ" secondAttribute="top" constant="60" id="UA9-Lb-QYM"/>
                             <constraint firstItem="xss-Nb-mBG" firstAttribute="bottom" secondItem="Tid-bv-sqZ" secondAttribute="bottom" constant="-20" id="ahF-rT-9A1"/>
                             <constraint firstItem="Tid-bv-sqZ" firstAttribute="trailing" secondItem="qNq-yA-XPu" secondAttribute="trailing" constant="20" id="dBv-jr-NrQ"/>
                             <constraint firstItem="Tid-bv-sqZ" firstAttribute="trailing" secondItem="PAu-QR-uiz" secondAttribute="trailing" constant="20" id="h9Y-o5-daw"/>
-                            <constraint firstItem="qc0-Lw-dQa" firstAttribute="top" secondItem="8oV-zl-QE4" secondAttribute="bottom" constant="20" id="iUU-BV-4Du"/>
+                            <constraint firstItem="qc0-Lw-dQa" firstAttribute="top" secondItem="8oV-zl-QE4" secondAttribute="bottom" constant="25" id="iUU-BV-4Du"/>
                             <constraint firstItem="xss-Nb-mBG" firstAttribute="leading" secondItem="Tid-bv-sqZ" secondAttribute="leading" constant="20" id="jPQ-2H-zfg"/>
                             <constraint firstItem="8oV-zl-QE4" firstAttribute="leading" secondItem="Tid-bv-sqZ" secondAttribute="leading" constant="20" id="y5U-CN-E3y"/>
                         </constraints>
@@ -1406,6 +1410,9 @@ with our them &amp; condication.</string>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="qc0-Lw-dQa" id="lyp-Sj-Y3Q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ahR-oO-hsS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1892,6 +1899,9 @@ with our them &amp; condication.</string>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Add to cart"/>
+                                                <connections>
+                                                    <action selector="addToCartTapped:" destination="zhb-3f-RXi" eventType="touchUpInside" id="gig-Ya-oAa"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="labelColor"/>
@@ -1949,6 +1959,7 @@ with our them &amp; condication.</string>
                     <connections>
                         <outlet property="collectionView" destination="DsN-Lh-Gzt" id="mYs-fF-32t"/>
                         <outlet property="itemDescription" destination="0Is-Gf-P5X" id="UDx-lF-NvZ"/>
+                        <outlet property="itemPrice" destination="HWj-Vj-tGM" id="03l-xw-Bt9"/>
                         <outlet property="itemTitle" destination="BNt-Wn-kZr" id="R1f-fL-14l"/>
                         <outlet property="pageControl" destination="X8H-3g-Ad1" id="DSE-YD-tnV"/>
                     </connections>
