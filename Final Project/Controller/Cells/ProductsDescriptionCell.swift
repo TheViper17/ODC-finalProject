@@ -10,5 +10,6 @@ import UIKit
 class ProductsDescriptionCell: UICollectionViewCell {
     
     static let ID = String(describing: ProductsDescriptionCell.self)
+    @IBOutlet weak var image: UIImageView!
     
 }

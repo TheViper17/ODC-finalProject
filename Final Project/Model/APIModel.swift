@@ -35,7 +35,10 @@ struct CategoriesDetailes : Decodable {
 }
 
 struct DataDescription : Decodable {
+    let id : Int
     let price : Double
     let name : String
     let image : String
+    let images : [String]
+    let description : String
 }

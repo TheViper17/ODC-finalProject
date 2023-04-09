@@ -70,4 +70,15 @@ extension CategoriesPageController : UICollectionViewDataSource , UICollectionVi
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+        let vc = storyboard?.instantiateViewController(withIdentifier: ProductsDescriptionController.ID) as! ProductsDescriptionController
+        vc.pageCells.append(categoryPageDetailes[indexPath.row].image)
+        vc.pageCells.append(contentsOf: categoryPageDetailes[indexPath.row].images)
+        vc.pageItemTitle = categoryPageDetailes[indexPath.row].name
+        vc.pageItemDescription = categoryPageDetailes[indexPath.row].description
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
 }
