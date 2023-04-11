@@ -12,9 +12,10 @@ class SplashController: UIViewController {
     
     @IBOutlet weak var activityIndicator: NVActivityIndicatorView!
     static let ID = String(describing : SplashController.self)
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(NSHomeDirectory())
         
         activityIndicator.alpha = 0
         
@@ -24,13 +25,20 @@ class SplashController: UIViewController {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5){
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyBoard.instantiateViewController(withIdentifier: SecondSplashController.ID) as! SecondSplashController
-            self.navigationController?.pushViewController(vc, animated: true)
+            if UserDefaults.standard.bool(forKey: "signedIn") == true {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: HostController.ID) as! HostController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }else{
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: SecondSplashController.ID) as! SecondSplashController
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
         }
         
     }
-
-
+    
+    
 }
 

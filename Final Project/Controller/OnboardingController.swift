@@ -29,6 +29,7 @@ class OnboardingController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.set(true, forKey: "onBoardingVisited")
         setupData()
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
@@ -37,13 +38,27 @@ class OnboardingController: UIViewController{
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
         
-        if currentPage == pageCells.count - 1{
-            print("Navigate")
+//        if currentPage == pageCells.count - 1{
+//            print("Navigate")
+//            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = storyBoard.instantiateViewController(withIdentifier: LoginController.ID) as! LoginController
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }else{
+//            currentPage += 1
+//            let indexPath = IndexPath(item: currentPage, section: 0)
+//            onboardingCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+//        }
+        
+        if SecondSplashController.loginSwitch {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: LoginController.ID) as! LoginController
+            self.navigationController?.pushViewController(vc, animated: true)
         }else{
-            currentPage += 1
-            let indexPath = IndexPath(item: currentPage, section: 0)
-            onboardingCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyBoard.instantiateViewController(withIdentifier: SignupController.ID) as! SignupController
+            self.navigationController?.pushViewController(vc, animated: true)
         }
+
         
     }
     

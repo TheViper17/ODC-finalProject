@@ -322,7 +322,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailCheckmarkLogo" destination="R1v-8k-fWf" id="Hvv-R5-5al"/>
                         <outlet property="emailTextfield" destination="fiA-Bi-64I" id="ZAu-Go-MBV"/>
+                        <outlet property="passwordCheckmarkLogo" destination="J5h-Eh-cEs" id="uTb-bc-847"/>
                         <outlet property="passwordTextfield" destination="M0g-aw-z26" id="9KQ-UX-8Mf"/>
                     </connections>
                 </viewController>
@@ -427,8 +429,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2O8-J8-BQY">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="0w7-Vy-WK9">
-                                    <size key="itemSize" width="414" height="702"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="xzs-2g-wyL">
+                                    <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -484,17 +486,18 @@ more beautiful with this app.</string>
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUG-Lp-Imd">
-                                <rect key="frame" x="329" y="772" width="45" height="45"/>
+                                <rect key="frame" x="314" y="772" width="60" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="45" id="oVG-WQ-3CR"/>
-                                    <constraint firstAttribute="height" constant="45" id="sIg-4r-y9t"/>
+                                    <constraint firstAttribute="width" constant="60" id="oVG-WQ-3CR"/>
+                                    <constraint firstAttribute="height" constant="40" id="sIg-4r-y9t"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="arrow"/>
+                                <state key="normal" title="Skip"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
+                                        <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -563,19 +566,19 @@ more beautiful with this app.</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaR-WD-LLm">
-                                <rect key="frame" x="20" y="294" width="71" height="24"/>
+                                <rect key="frame" x="20" y="264" width="71" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create a new account" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-m8-EkE">
-                                <rect key="frame" x="20" y="333" width="166" height="20.5"/>
+                                <rect key="frame" x="20" y="303" width="166" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cac-UK-rg7" userLabel="Data Stack">
-                                <rect key="frame" x="20" y="418.5" width="374" height="296"/>
+                                <rect key="frame" x="20" y="388.5" width="374" height="296"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QYk-fT-XpC" userLabel="Username Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="51.5"/>
@@ -628,7 +631,7 @@ more beautiful with this app.</string>
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MY5-9Z-wga" userLabel="Password Stack">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="MY5-9Z-wga" userLabel="Email Stack">
                                         <rect key="frame" x="0.0" y="81.5" width="374" height="51.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="lKj-VI-Cm5">
@@ -648,14 +651,23 @@ more beautiful with this app.</string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Lfh-89-qqw">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-GE-Sk9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="374" height="20"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dsq-GE-Sk9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="349" height="20"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="underlinedTF" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LF8-sO-RVP">
+                                                                <rect key="frame" x="354" y="0.0" width="20" height="20"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="20" id="FoX-8L-rEK"/>
+                                                                    <constraint firstAttribute="height" constant="20" id="ne9-ke-Zx4"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="checkMark"/>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3a2-Au-u0D">
@@ -698,7 +710,7 @@ more beautiful with this app.</string>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="underlinedTF" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-LL-agY">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYQ-LL-agY">
                                                                 <rect key="frame" x="354" y="0.0" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="6Hm-Bd-KtG"/>
@@ -706,6 +718,9 @@ more beautiful with this app.</string>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="eye"/>
+                                                                <connections>
+                                                                    <action selector="showPasswordTapped:" destination="qib-aV-6GH" eventType="touchUpInside" id="pKd-Pj-6AE"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -749,7 +764,7 @@ more beautiful with this app.</string>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="underlinedTF" value="YES"/>
                                                                 </userDefinedRuntimeAttributes>
                                                             </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBn-1W-vVG">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBn-1W-vVG">
                                                                 <rect key="frame" x="354" y="0.0" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="Kuv-Fq-SnN"/>
@@ -757,6 +772,9 @@ more beautiful with this app.</string>
                                                                 </constraints>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="eye"/>
+                                                                <connections>
+                                                                    <action selector="showPasswordTapped:" destination="qib-aV-6GH" eventType="touchUpInside" id="Pfg-BY-IR6"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -775,7 +793,7 @@ more beautiful with this app.</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-Oh-8RV">
-                                <rect key="frame" x="20" y="789.5" width="374" height="50"/>
+                                <rect key="frame" x="20" y="794.5" width="374" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="jnW-Dw-T1s"/>
@@ -797,7 +815,7 @@ more beautiful with this app.</string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fT2-lC-WJF" customClass="CheckBoxButton" customModule="SwiftCheckBox">
-                                <rect key="frame" x="5" y="724.5" width="50" height="50"/>
+                                <rect key="frame" x="5" y="714.5" width="50" height="50"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="YV4-Sy-IAL"/>
@@ -805,7 +823,7 @@ more beautiful with this app.</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enl-QQ-CBB">
-                                <rect key="frame" x="65" y="734.5" width="329" height="41"/>
+                                <rect key="frame" x="65" y="719.5" width="329" height="41"/>
                                 <string key="text">By creating an account you have to agree
 with our them &amp; condication.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -817,27 +835,34 @@ with our them &amp; condication.</string>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="57e-f4-oeK" firstAttribute="trailing" secondItem="enl-QQ-CBB" secondAttribute="trailing" constant="20" id="0P9-8j-ySi"/>
-                            <constraint firstItem="enl-QQ-CBB" firstAttribute="top" secondItem="cac-UK-rg7" secondAttribute="bottom" constant="20" id="DpT-XN-Gpl"/>
+                            <constraint firstItem="enl-QQ-CBB" firstAttribute="top" secondItem="cac-UK-rg7" secondAttribute="bottom" constant="35" id="DpT-XN-Gpl"/>
                             <constraint firstItem="fT2-lC-WJF" firstAttribute="leading" secondItem="57e-f4-oeK" secondAttribute="leading" constant="5" id="F9b-Ki-47u"/>
                             <constraint firstItem="ZVU-Oh-8RV" firstAttribute="leading" secondItem="57e-f4-oeK" secondAttribute="leading" constant="20" id="JBN-iu-H3F"/>
                             <constraint firstItem="cac-UK-rg7" firstAttribute="leading" secondItem="57e-f4-oeK" secondAttribute="leading" constant="20" id="OML-yc-fVq"/>
                             <constraint firstItem="0dD-Ar-4AC" firstAttribute="top" secondItem="57e-f4-oeK" secondAttribute="top" constant="65" id="Q7e-i4-Axt"/>
                             <constraint firstItem="xhB-m8-EkE" firstAttribute="top" secondItem="UaR-WD-LLm" secondAttribute="bottom" constant="15" id="QgN-Fi-y4u"/>
                             <constraint firstItem="57e-f4-oeK" firstAttribute="trailing" secondItem="cac-UK-rg7" secondAttribute="trailing" constant="20" id="SX3-ZJ-mgX"/>
-                            <constraint firstItem="ZVU-Oh-8RV" firstAttribute="top" secondItem="fT2-lC-WJF" secondAttribute="bottom" constant="15" id="Sy5-uB-wMo"/>
+                            <constraint firstItem="ZVU-Oh-8RV" firstAttribute="top" secondItem="fT2-lC-WJF" secondAttribute="bottom" constant="30" id="Sy5-uB-wMo"/>
                             <constraint firstItem="UaR-WD-LLm" firstAttribute="leading" secondItem="57e-f4-oeK" secondAttribute="leading" constant="20" id="Vku-Rm-AQF"/>
                             <constraint firstItem="0dD-Ar-4AC" firstAttribute="centerX" secondItem="epO-XM-xfh" secondAttribute="centerX" id="YSe-2x-dvc"/>
                             <constraint firstItem="xhB-m8-EkE" firstAttribute="leading" secondItem="57e-f4-oeK" secondAttribute="leading" constant="20" id="beB-Ga-zfv"/>
                             <constraint firstItem="cac-UK-rg7" firstAttribute="top" secondItem="xhB-m8-EkE" secondAttribute="bottom" constant="65" id="cWd-qY-9WF"/>
-                            <constraint firstItem="fT2-lC-WJF" firstAttribute="top" secondItem="cac-UK-rg7" secondAttribute="bottom" constant="10" id="eBI-f0-oaY"/>
+                            <constraint firstItem="fT2-lC-WJF" firstAttribute="top" secondItem="cac-UK-rg7" secondAttribute="bottom" constant="30" id="eBI-f0-oaY"/>
                             <constraint firstItem="57e-f4-oeK" firstAttribute="trailing" secondItem="ZVU-Oh-8RV" secondAttribute="trailing" constant="20" id="gZR-x4-6Uv"/>
                             <constraint firstItem="enl-QQ-CBB" firstAttribute="leading" secondItem="fT2-lC-WJF" secondAttribute="trailing" constant="10" id="kDy-p5-Tlf"/>
-                            <constraint firstItem="UaR-WD-LLm" firstAttribute="top" secondItem="57e-f4-oeK" secondAttribute="top" constant="250" id="ulr-ZH-gve"/>
+                            <constraint firstItem="UaR-WD-LLm" firstAttribute="top" secondItem="57e-f4-oeK" secondAttribute="top" constant="220" id="ulr-ZH-gve"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkboxOutlet" destination="fT2-lC-WJF" id="BNu-XH-Uge"/>
+                        <outlet property="confirmPasswordTextfield" destination="e35-sT-kLD" id="D48-Ux-n0A"/>
+                        <outlet property="emailCheckmarkLogo" destination="LF8-sO-RVP" id="Ypj-VI-3YU"/>
                         <outlet property="emailTextfield" destination="dsq-GE-Sk9" id="Yod-Nf-LZU"/>
+                        <outlet property="hideConfirmPasswordLogo" destination="KBn-1W-vVG" id="0yP-Hn-csS"/>
+                        <outlet property="hidePasswordLogo" destination="CYQ-LL-agY" id="EFR-6M-xAV"/>
                         <outlet property="passwordTextfield" destination="1ZP-79-Ytx" id="xU3-HM-4uY"/>
+                        <outlet property="usernameCheckmarkLogo" destination="ChW-Ih-oge" id="jFm-55-XKl"/>
+                        <outlet property="usernameTextfield" destination="s81-aG-S5F" id="y3Q-8W-ldg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JER-DH-RuD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2272,7 +2297,6 @@ our app and start working in it.</string>
     </scenes>
     <resources>
         <image name="apple" width="325" height="50"/>
-        <image name="arrow" width="23" height="15"/>
         <image name="arrowWhite" width="15" height="10"/>
         <image name="backArrow" width="18" height="12"/>
         <image name="cartIcon" width="14" height="15"/>
