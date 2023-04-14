@@ -47,7 +47,7 @@ class LoginController: UIViewController {
             print("userFound")
             self.emailCheckmarkLogo.alpha = 1
             self.passwordCheckmarkLogo.alpha = 1
-            UserDefaults.standard.set(true, forKey: "signedIn")
+            //UserDefaults.standard.set(true, forKey: "signedIn")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: SuccessfulController.ID) as! SuccessfulController
@@ -83,6 +83,9 @@ class LoginController: UIViewController {
                     return
                 }
                 print("Google user Found")
+                //print(res!.user.photoURL!)
+                UserDefaults.standard.set(res!.user.email!, forKey: "emailField")
+                UserDefaults.standard.set(res!.user.displayName!, forKey: "nameField")
                 UserDefaults.standard.set(true, forKey: "signedIn")
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: SuccessfulController.ID) as! SuccessfulController

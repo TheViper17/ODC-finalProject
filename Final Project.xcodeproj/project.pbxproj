@@ -41,6 +41,7 @@
 		D37C352529D75B550022E19D /* CartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C352429D75B550022E19D /* CartController.swift */; };
 		D37C352729D75B860022E19D /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C352629D75B860022E19D /* CategoriesController.swift */; };
 		D37C352929D75BB20022E19D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C352829D75BB20022E19D /* ProfileController.swift */; };
+		D3812E6F29E7ED6B009E3C43 /* ProfileDetailesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3812E6E29E7ED6B009E3C43 /* ProfileDetailesController.swift */; };
 		E18BD2CCF6D9B9FA186385A8 /* Pods_Final_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62E7932FFE83E4D283B6944 /* Pods_Final_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		D37C352429D75B550022E19D /* CartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartController.swift; sourceTree = "<group>"; };
 		D37C352629D75B860022E19D /* CategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
 		D37C352829D75BB20022E19D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		D3812E6E29E7ED6B009E3C43 /* ProfileDetailesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 				D37C352429D75B550022E19D /* CartController.swift */,
 				D37C352629D75B860022E19D /* CategoriesController.swift */,
 				D37C352829D75BB20022E19D /* ProfileController.swift */,
+				D3812E6E29E7ED6B009E3C43 /* ProfileDetailesController.swift */,
 			);
 			path = Navigation_Controller;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				D37C352129D75A6F0022E19D /* ViewEmbedder.swift in Sources */,
 				D37C352929D75BB20022E19D /* ProfileController.swift in Sources */,
 				D317DB8E29DADA1900B12AAF /* ProductsPageCell.swift in Sources */,
+				D3812E6F29E7ED6B009E3C43 /* ProfileDetailesController.swift in Sources */,
 				D35C82C229D85073002C21A5 /* FiltersController.swift in Sources */,
 				D317DB9229DAE29B00B12AAF /* ProductsDescriptionCell.swift in Sources */,
 			);

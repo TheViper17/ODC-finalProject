@@ -15,7 +15,8 @@ class CategoriesController: UIViewController {
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
     static var mainCategoryNames:[Description] = []
-    static var numberOfItems : Int = 0
+    //static var numberOfItems : Int = 0
+    //static var numberOfItems : [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +27,20 @@ class CategoriesController: UIViewController {
         
     }
     
-    static func getCategoriesDetailesCount(index:Int) {
-
-        AF.request(API.BASE_URL + "categories" + "/\(index)", method: .get , headers: HomeController.headers).responseDecodable(of: MainCategoriesDescription.self){ res in
-
-            //print("into number call")
-            switch res.result {
-            case .success(let categoriesDetailes):
-                //CategoriesController.numberOfItems.append(categoriesDetailes.data.data.count)
-                CategoriesController.numberOfItems = categoriesDetailes.data.data.count
-                //print(categoriesDetailes.data.data.count)
-            case .failure(let er):
-                print("failed to get main category detailes")
-                print(er)
-            }
-        }
-
-    }
+//    static func getCategoriesDetailesCount(index:Int) {
+//
+//        AF.request(API.BASE_URL + "categories" + "/\(index)", method: .get , headers: HomeController.headers).responseDecodable(of: MainCategoriesDescription.self){ res in
+//
+//            switch res.result {
+//            case .success(let categoriesDetailes):
+//                CategoriesController.numberOfItems.append(categoriesDetailes.data.data.count)
+//            case .failure(let er):
+//                print("failed to get main category detailes")
+//                print(er)
+//            }
+//        }
+//
+//    }
 
     
 }
@@ -57,7 +55,8 @@ extension CategoriesController : UICollectionViewDataSource , UICollectionViewDe
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesPageCell.ID, for: indexPath) as! CategoriesPageCell
         cell.title.text = CategoriesController.mainCategoryNames[indexPath.row].name
-        cell.productsNumber.text = "\(CategoriesController.numberOfItems) products"
+        //cell.productsNumber.text = "\(CategoriesController.numberOfItems[indexPath.row]) products"
+        cell.productsNumber.text = "products"
         cell.image.kf.setImage(with: URL(string: CategoriesController.mainCategoryNames[indexPath.row].image))
         return cell
         

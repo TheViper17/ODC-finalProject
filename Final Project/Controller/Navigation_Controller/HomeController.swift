@@ -39,11 +39,17 @@ class HomeController: UIViewController {
                 HomeController.categoryNames = categories.data.data
                 CategoriesController.mainCategoryNames = categories.data.data
                 self.categoriesCollectionView.reloadData()
+                self.getCategoriesDetailes(index: HomeController.categoryNames[0].id)
             case .failure(let er):
                 print("failed to get main category")
                 print(er)
             }
         }
+    }
+    @IBAction func profileTapped(_ sender: Any) {
+        
+        
+        
     }
     
     func getCategoriesDetailes(index:Int) {
@@ -79,7 +85,7 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.categoriesCollectionView {
-            CategoriesController.getCategoriesDetailesCount(index: HomeController.categoryNames[indexPath.row].id)
+            //CategoriesController.getCategoriesDetailesCount(index: HomeController.categoryNames[indexPath.row].id)
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCell.ID, for: indexPath) as! CategoriesCell
             cell.categoryTitle.text = HomeController.categoryNames[indexPath.row].name
@@ -101,7 +107,7 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
             print("maincollectionviewtapped")
             getCategoriesDetailes(index: HomeController.categoryNames[indexPath.row].id)
         }else{
-            print("3aaash ya bjoon")
+            //print("3aaash ya bjoon")
         }
         
     }

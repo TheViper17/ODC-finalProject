@@ -11,7 +11,10 @@ class CartCell: UICollectionViewCell {
     
     static let ID = String(describing: CartCell.self)
     
-    var number = 1
+    static var number = 1
+    
+    static var numberArray : [Int] = []
+    static var itemPrice : [Double] = []
     
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var titleOutlet: UILabel!
@@ -20,11 +23,19 @@ class CartCell: UICollectionViewCell {
     
     @IBAction func buttonTapped(_ sender: UIButton) {
         
-        if sender.tag == 1 {
-            number -= 1
-        }else{
-            number += 1
-        }
+        // minus button
+//        if sender.tag == 1 {
+//            if CartCell.number == 1 {
+//                print("minimum number selected")
+//            }else{
+//                CartCell.number -= 1
+//                numberOfItemsOutlet.text = "\(CartCell.number)"
+//            }
+//            // plus button
+//        }else{
+//            CartCell.number += 1
+//            numberOfItemsOutlet.text = "\(CartCell.number)"
+//        }
         
     }
 }

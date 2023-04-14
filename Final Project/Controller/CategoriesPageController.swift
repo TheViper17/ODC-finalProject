@@ -73,12 +73,14 @@ extension CategoriesPageController : UICollectionViewDataSource , UICollectionVi
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let vc = storyboard?.instantiateViewController(withIdentifier: ProductsDescriptionController.ID) as! ProductsDescriptionController
-        vc.pageCells.append(CategoriesPageController.categoryPageDetailes[indexPath.row].image)
-        vc.pageCells.append(contentsOf: CategoriesPageController.categoryPageDetailes[indexPath.row].images)
-        vc.pageItemTitle = CategoriesPageController.categoryPageDetailes[indexPath.row].name
-        vc.pageItemDescription = CategoriesPageController.categoryPageDetailes[indexPath.row].description
-        vc.pageItemPrice = "$ \(CategoriesPageController.categoryPageDetailes[indexPath.row].price)"
-        vc.itemID = HomeController.categoryNames[indexPath.row].id
+        vc.item = CategoriesPageController.categoryPageDetailes[indexPath.row]
+//        vc.pageCells.append(CategoriesPageController.categoryPageDetailes[indexPath.row].image)
+//        vc.pageCells.append(contentsOf: CategoriesPageController.categoryPageDetailes[indexPath.row].images)
+//        vc.pageItemTitle = CategoriesPageController.categoryPageDetailes[indexPath.row].name
+//        vc.pageItemDescription = CategoriesPageController.categoryPageDetailes[indexPath.row].description
+//        vc.pageItemPrice = "$ \(CategoriesPageController.categoryPageDetailes[indexPath.row].price)"
+//        vc.itemID = HomeController.categoryNames[indexPath.row].id
+        
         navigationController?.pushViewController(vc, animated: true)
         
     }

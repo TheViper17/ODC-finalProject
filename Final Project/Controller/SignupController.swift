@@ -77,7 +77,9 @@ class SignupController: UIViewController {
             print("signed up")
             self.usernameCheckmarkLogo.alpha = 1
             self.emailCheckmarkLogo.alpha = 1
-            UserDefaults.standard.set(true, forKey: "signedIn")
+            //UserDefaults.standard.set(true, forKey: "signedIn")
+            UserDefaults.standard.set(self.emailTextfield.text, forKey: "emailField")
+            UserDefaults.standard.set(self.usernameTextfield.text, forKey: "nameField")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: SuccessfulController.ID) as! SuccessfulController
