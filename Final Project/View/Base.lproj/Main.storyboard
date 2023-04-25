@@ -1213,6 +1213,7 @@ with our them &amp; condication.</string>
                     <connections>
                         <outlet property="categoriesCollectionView" destination="Qhx-gx-zRA" id="kLQ-PP-DdH"/>
                         <outlet property="categoriesDetailesCollectionView" destination="Fdi-bn-vEt" id="aqR-6L-Dro"/>
+                        <outlet property="homeSearch" destination="jPJ-9v-nlq" id="jB8-Ko-Liw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxT-Qc-0DM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1578,6 +1579,7 @@ with our them &amp; condication.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="categoriesSearch" destination="Bel-C1-Nfh" id="MpT-4X-5YF"/>
                         <outlet property="collectionViewOutlet" destination="RmB-Yt-dSs" id="XDR-J0-Xg3"/>
                     </connections>
                 </viewController>
@@ -2039,6 +2041,7 @@ with our them &amp; condication.</string>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="9hu-GQ-q6R" eventType="touchUpInside" id="wyC-HF-VXa"/>
+                                    <action selector="searchTapped:" destination="5xh-T6-hbv" eventType="touchUpInside" id="B9G-MU-tfu"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CategoriesTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKq-po-uup">

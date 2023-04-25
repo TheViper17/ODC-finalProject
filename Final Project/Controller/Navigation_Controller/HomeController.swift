@@ -12,13 +12,17 @@ import Kingfisher
 class HomeController: UIViewController {
 
     static let ID = String(describing: HomeController.self)
-    static let headers: HTTPHeaders = ["lang" : "en"]
     
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var categoriesDetailesCollectionView: UICollectionView!
-
+    
+    @IBOutlet weak var homeSearch: UITextField!
+    var textFieldVariable = ""
+    
     static var categoryNames:[Description] = []
     var categoryDetailes:[DataDescription] = []
+    var categoryDetailesSearch:[DataDescription] = []
+    static let headers: HTTPHeaders = ["lang" : "en"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +31,34 @@ class HomeController: UIViewController {
         categoriesDetailesCollectionView.delegate = self
         categoriesDetailesCollectionView.dataSource = self
         getMainCategories()
+        homeSearch.addTarget(self, action: #selector(HomeController.textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        textFieldVariable = homeSearch.text!
+        
+        if textFieldVariable.isEmpty {
+            categoryDetailesSearch = categoryDetailes
+            categoriesDetailesCollectionView.reloadData()
+        }else{
+            for i in 1...categoryDetailes.count{
+                if categoryDetailes[i-1].name.uppercased().contains(textFieldVariable.uppercased()){
+                    categoryDetailesSearch = categoryDetailes.filter({ ProductDetailes in
+                        return (ProductDetailes.name.localizedCaseInsensitiveContains(textFieldVariable))
+                    })
+                }
+            }
+            categoriesDetailesCollectionView.reloadData()
+        }
+    }
+    
+    @IBAction func profileTapped(_ sender: Any) {
+        print("profile tapped")
     }
     
     func getMainCategories() {
         
         AF.request(API.BASE_URL + "categories" , method: .get , headers: HomeController.headers).responseDecodable(of: MainCategoriesModel.self){ res in
-            //print("into main categories api")
             
             switch res.result {
             case .success(let categories):
@@ -45,11 +71,6 @@ class HomeController: UIViewController {
                 print(er)
             }
         }
-    }
-    @IBAction func profileTapped(_ sender: Any) {
-        
-        
-        
     }
     
     func getCategoriesDetailes(index:Int) {
@@ -78,26 +99,36 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
         if collectionView == self.categoriesCollectionView {
             return HomeController.categoryNames.count
         }else{
-            return categoryDetailes.count
+            if textFieldVariable.isEmpty {
+                return categoryDetailes.count
+            }else{
+                return categoryDetailesSearch.count
+            }
+            
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.categoriesCollectionView {
-            //CategoriesController.getCategoriesDetailesCount(index: HomeController.categoryNames[indexPath.row].id)
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCell.ID, for: indexPath) as! CategoriesCell
             cell.categoryTitle.text = HomeController.categoryNames[indexPath.row].name
             return cell
             
         }else {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCell.ID, for: indexPath) as! ProductsCell
-            cell.title.text = categoryDetailes[indexPath.row].name
-            cell.price.text = "$ \(categoryDetailes[indexPath.row].price)"
-            cell.image.kf.setImage(with: URL(string: categoryDetailes[indexPath.row].image))
-            return cell
+            if textFieldVariable.isEmpty {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCell.ID, for: indexPath) as! ProductsCell
+                cell.title.text = categoryDetailes[indexPath.row].name
+                cell.price.text = "$ \(categoryDetailes[indexPath.row].price)"
+                cell.image.kf.setImage(with: URL(string: categoryDetailes[indexPath.row].image))
+                return cell
+            } else {
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsCell.ID, for: indexPath) as! ProductsCell
+                cell.title.text = categoryDetailesSearch[indexPath.row].name
+                cell.price.text = "$ \(categoryDetailesSearch[indexPath.row].price)"
+                cell.image.kf.setImage(with: URL(string: categoryDetailesSearch[indexPath.row].image))
+                return cell
+            }
         }
     }
     
@@ -107,7 +138,7 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
             print("maincollectionviewtapped")
             getCategoriesDetailes(index: HomeController.categoryNames[indexPath.row].id)
         }else{
-            //print("3aaash ya bjoon")
+            print("go to categories page to select an item")
         }
         
     }

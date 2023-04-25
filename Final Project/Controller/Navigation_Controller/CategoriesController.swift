@@ -12,9 +12,15 @@ import Alamofire
 class CategoriesController: UIViewController {
     
     static let ID = String(describing: CategoriesController.self)
+    
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     
+    @IBOutlet weak var categoriesSearch: UITextField!
+    var textFieldVariable = ""
+    
     static var mainCategoryNames:[Description] = []
+    static var mainCategoryNamesSearch:[Description] = []
+    
     //static var numberOfItems : Int = 0
     //static var numberOfItems : [Int] = []
     
@@ -24,7 +30,26 @@ class CategoriesController: UIViewController {
         collectionViewOutlet.delegate = self
         collectionViewOutlet.dataSource = self
         collectionViewOutlet.reloadData()
+        categoriesSearch.addTarget(self, action: #selector(CategoriesController.textFieldDidChange(_:)), for: .editingChanged)
         
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        textFieldVariable = categoriesSearch.text!
+        
+        if textFieldVariable.isEmpty {
+            CategoriesController.mainCategoryNamesSearch = CategoriesController.mainCategoryNames
+            collectionViewOutlet.reloadData()
+        }else{
+            for i in 1...CategoriesController.mainCategoryNames.count{
+                if CategoriesController.mainCategoryNames[i-1].name.uppercased().contains(textFieldVariable.uppercased()){
+                    CategoriesController.mainCategoryNamesSearch = CategoriesController.mainCategoryNames.filter({ ProductDetailes in
+                        return (ProductDetailes.name.localizedCaseInsensitiveContains(textFieldVariable))
+                    })
+                }
+            }
+            collectionViewOutlet.reloadData()
+        }
     }
     
 //    static func getCategoriesDetailesCount(index:Int) {
@@ -48,17 +73,32 @@ class CategoriesController: UIViewController {
 extension CategoriesController : UICollectionViewDataSource , UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return CategoriesController.mainCategoryNames.count
+        if textFieldVariable.isEmpty {
+            return CategoriesController.mainCategoryNames.count
+        }else{
+            return CategoriesController.mainCategoryNamesSearch.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesPageCell.ID, for: indexPath) as! CategoriesPageCell
-        cell.title.text = CategoriesController.mainCategoryNames[indexPath.row].name
-        //cell.productsNumber.text = "\(CategoriesController.numberOfItems[indexPath.row]) products"
-        cell.productsNumber.text = "products"
-        cell.image.kf.setImage(with: URL(string: CategoriesController.mainCategoryNames[indexPath.row].image))
-        return cell
+        if textFieldVariable.isEmpty{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesPageCell.ID, for: indexPath) as! CategoriesPageCell
+            cell.title.text = CategoriesController.mainCategoryNames[indexPath.row].name
+            //cell.productsNumber.text = "\(CategoriesController.numberOfItems[indexPath.row]) products"
+            cell.productsNumber.text = "products"
+            cell.image.kf.setImage(with: URL(string: CategoriesController.mainCategoryNames[indexPath.row].image))
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesPageCell.ID, for: indexPath) as! CategoriesPageCell
+            cell.title.text = CategoriesController.mainCategoryNamesSearch[indexPath.row].name
+            //cell.productsNumber.text = "\(CategoriesController.numberOfItems[indexPath.row]) products"
+            cell.productsNumber.text = "products"
+            cell.image.kf.setImage(with: URL(string: CategoriesController.mainCategoryNamesSearch[indexPath.row].image))
+            return cell
+        }
+        
+
         
     }
     

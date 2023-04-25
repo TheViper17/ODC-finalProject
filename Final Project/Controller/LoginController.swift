@@ -47,7 +47,7 @@ class LoginController: UIViewController {
             print("userFound")
             self.emailCheckmarkLogo.alpha = 1
             self.passwordCheckmarkLogo.alpha = 1
-            //UserDefaults.standard.set(true, forKey: "signedIn")
+            UserDefaults.standard.set(true, forKey: "signedIn")
             DispatchQueue.main.asyncAfter(deadline: .now() + 1){
                 let storyBoard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = storyBoard.instantiateViewController(withIdentifier: SuccessfulController.ID) as! SuccessfulController

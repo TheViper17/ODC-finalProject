@@ -15,7 +15,11 @@ class CategoriesPageController: UIViewController {
     
     @IBOutlet weak var collectionViewOutlet: UICollectionView!
     @IBOutlet weak var categoryTitle: UILabel!
+    
     static var categoryPageDetailes:[DataDescription] = []
+    static var categoryPageDetailesSearch:[DataDescription] = []
+    var textFieldVariable = ""
+    
     var pageTitle = "Title"
     
     override func viewDidLoad() {
@@ -46,6 +50,49 @@ class CategoriesPageController: UIViewController {
 
     }
     
+    @IBAction func searchTapped(_ sender: UIButton) {
+        
+        textFieldVariable = ""
+        self.collectionViewOutlet.reloadData()
+        
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
+
+        alertController.addTextField { (textField) in
+            // configure the properties of the text field
+            textField.placeholder = "Search Products"
+            textField.addTarget(self, action: #selector(CategoriesPageController.textFieldDidChange(_:)), for: .editingChanged)
+        }
+        
+        // add the buttons/actions to the view controller
+        let saveAction = UIAlertAction(title: "Search", style: .default) { _ in
+
+            // this code runs when the user hits the "save" button
+
+        }
+
+        alertController.addAction(saveAction)
+
+        present(alertController, animated: true, completion: nil)
+        
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        textFieldVariable = textField.text!
+        
+        if textFieldVariable.isEmpty {
+            CategoriesPageController.categoryPageDetailesSearch = CategoriesPageController.categoryPageDetailes
+            collectionViewOutlet.reloadData()
+        }else{
+            for i in 1...CategoriesPageController.categoryPageDetailes.count{
+                if CategoriesPageController.categoryPageDetailes[i-1].name.uppercased().contains(textFieldVariable.uppercased()){
+                    CategoriesPageController.categoryPageDetailesSearch = CategoriesPageController.categoryPageDetailes.filter({ ProductDetailes in
+                        return (ProductDetailes.name.localizedCaseInsensitiveContains(textFieldVariable))
+                    })
+                }
+            }
+            collectionViewOutlet.reloadData()
+        }
+    }
     
     @IBAction func backTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
@@ -57,16 +104,28 @@ class CategoriesPageController: UIViewController {
 extension CategoriesPageController : UICollectionViewDataSource , UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return CategoriesPageController.categoryPageDetailes.count
+        if textFieldVariable.isEmpty{
+            return CategoriesPageController.categoryPageDetailes.count
+        }else{
+            return CategoriesPageController.categoryPageDetailesSearch.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsPageCell.ID, for: indexPath) as! ProductsPageCell
-        cell.title.text = CategoriesPageController.categoryPageDetailes[indexPath.row].name
-        cell.price.text = "$ \(CategoriesPageController.categoryPageDetailes[indexPath.row].price)"
-        cell.image.kf.setImage(with: URL(string: CategoriesPageController.categoryPageDetailes[indexPath.row].image))
-        return cell
+        if textFieldVariable.isEmpty{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsPageCell.ID, for: indexPath) as! ProductsPageCell
+            cell.title.text = CategoriesPageController.categoryPageDetailes[indexPath.row].name
+            cell.price.text = "$ \(CategoriesPageController.categoryPageDetailes[indexPath.row].price)"
+            cell.image.kf.setImage(with: URL(string: CategoriesPageController.categoryPageDetailes[indexPath.row].image))
+            return cell
+        }else{
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductsPageCell.ID, for: indexPath) as! ProductsPageCell
+            cell.title.text = CategoriesPageController.categoryPageDetailesSearch[indexPath.row].name
+            cell.price.text = "$ \(CategoriesPageController.categoryPageDetailesSearch[indexPath.row].price)"
+            cell.image.kf.setImage(with: URL(string: CategoriesPageController.categoryPageDetailesSearch[indexPath.row].image))
+            return cell
+        }
         
     }
     
