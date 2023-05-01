@@ -926,19 +926,13 @@ with our them &amp; condication.</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.9442596435546875" green="0.9442596435546875" blue="0.9442596435546875" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="rIS-IK-kzo"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" systemColor="systemGray2Color"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
@@ -961,6 +955,7 @@ with our them &amp; condication.</string>
                     </view>
                     <connections>
                         <outlet property="hostView" destination="I0e-8s-xvs" id="x9b-Kj-JgL"/>
+                        <outlet property="navigationBarOutlet" destination="XLR-DN-Jdc" id="Wiv-9N-mF2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yax-XL-iUJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1033,8 +1028,8 @@ with our them &amp; condication.</string>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="JeP-hl-Pzh"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WDY-VF-nE6">
-                                    <size key="itemSize" width="150" height="30"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="8" id="WDY-VF-nE6">
+                                    <size key="itemSize" width="180" height="30"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -1087,6 +1082,7 @@ with our them &amp; condication.</string>
                                         <size key="customSize" width="180" height="30"/>
                                         <connections>
                                             <outlet property="categoryTitle" destination="CnD-qZ-sOP" id="aYf-Hs-nHF"/>
+                                            <outlet property="cellView" destination="j7P-CV-SYm" id="Aa1-x6-YGz"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -1243,6 +1239,12 @@ with our them &amp; condication.</string>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" red="0.64665006390000002" green="0.64665006390000002" blue="0.64665006390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.20000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="nextButtonTapped:" destination="9hu-GQ-q6R" eventType="touchUpInside" id="TIa-qq-poo"/>
@@ -1308,32 +1310,24 @@ with our them &amp; condication.</string>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="C99-fe-Sd8">
                                                     <rect key="frame" x="296" y="62" width="70" height="30"/>
                                                     <subviews>
-                                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jmX-Bk-xA6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="31" height="30"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="-">
-                                                                <color key="titleColor" systemColor="labelColor"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="buttonTapped:" destination="Jrl-p7-BVV" eventType="touchUpInside" id="yER-hP-j0J"/>
-                                                            </connections>
-                                                        </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsx-br-OHn">
-                                                            <rect key="frame" x="31" y="0.0" width="8" height="30"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwh-Yd-ixK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="21.5" height="30"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OJm-0c-qeh">
-                                                            <rect key="frame" x="39" y="0.0" width="31" height="30"/>
-                                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                            <state key="normal" title="+">
-                                                                <color key="titleColor" systemColor="labelColor"/>
-                                                            </state>
-                                                            <connections>
-                                                                <action selector="buttonTapped:" destination="Jrl-p7-BVV" eventType="touchUpInside" id="7wl-r1-7Ng"/>
-                                                            </connections>
-                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsx-br-OHn">
+                                                            <rect key="frame" x="21.5" y="0.0" width="20" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQp-kh-iLS">
+                                                            <rect key="frame" x="41.5" y="0.0" width="28.5" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -1369,7 +1363,9 @@ with our them &amp; condication.</string>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="imageOutlet" destination="ray-Y4-FYN" id="vzS-f6-HwY"/>
+                                            <outlet property="minusOutlet" destination="Xwh-Yd-ixK" id="v8g-vi-YBJ"/>
                                             <outlet property="numberOfItemsOutlet" destination="Nsx-br-OHn" id="hrS-AV-SlI"/>
+                                            <outlet property="plusOutlet" destination="aQp-kh-iLS" id="9Fz-7V-FBe"/>
                                             <outlet property="priceOutlet" destination="ukr-kP-gMt" id="Ut3-2X-tC1"/>
                                             <outlet property="titleOutlet" destination="wCC-8l-fXX" id="gS1-tI-VhT"/>
                                         </connections>

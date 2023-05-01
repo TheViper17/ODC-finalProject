@@ -68,6 +68,7 @@ extension CartController : UICollectionViewDataSource , UICollectionViewDelegate
         cell.priceOutlet.text = "$ \(CartCell.itemPrice[indexPath.row])"
         cell.imageOutlet.kf.setImage(with: URL(string: CartController.pageData[indexPath.row].image))
         cell.numberOfItemsOutlet.text = "\(CartCell.numberArray[indexPath.row])"
+        cell.cellIndex.append(indexPath.row)
         return cell
         
     }

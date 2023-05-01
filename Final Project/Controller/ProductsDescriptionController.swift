@@ -35,6 +35,7 @@ class ProductsDescriptionController: UIViewController {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
         itemTitle.text = item?.name
         itemDescription.text = item?.description
         itemPriceLabel = item!.price

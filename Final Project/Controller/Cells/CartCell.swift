@@ -11,7 +11,7 @@ class CartCell: UICollectionViewCell {
     
     static let ID = String(describing: CartCell.self)
     
-    static var number = 1
+    var cellIndex : [Int] = []
     
     static var numberArray : [Int] = []
     static var itemPrice : [Double] = []
@@ -19,23 +19,43 @@ class CartCell: UICollectionViewCell {
     @IBOutlet weak var imageOutlet: UIImageView!
     @IBOutlet weak var titleOutlet: UILabel!
     @IBOutlet weak var priceOutlet: UILabel!
+    
+    
+    @IBOutlet weak var minusOutlet: UILabel!
+    @IBOutlet weak var plusOutlet: UILabel!
     @IBOutlet weak var numberOfItemsOutlet: UILabel!
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupLabelTap()
+    }
+    
+    func setupLabelTap() {
         
-        // minus button
-//        if sender.tag == 1 {
-//            if CartCell.number == 1 {
-//                print("minimum number selected")
-//            }else{
-//                CartCell.number -= 1
-//                numberOfItemsOutlet.text = "\(CartCell.number)"
-//            }
-//            // plus button
-//        }else{
-//            CartCell.number += 1
-//            numberOfItemsOutlet.text = "\(CartCell.number)"
-//        }
+        let minusTap = UITapGestureRecognizer(target: self, action: #selector(self.minusTapped(_:)))
+        
+        let plusTap = UITapGestureRecognizer(target: self, action: #selector(self.plusTapped(_:)))
+        
+        self.minusOutlet.isUserInteractionEnabled = true
+        self.minusOutlet.addGestureRecognizer(minusTap)
+
+        self.plusOutlet.isUserInteractionEnabled = true
+        self.plusOutlet.addGestureRecognizer(plusTap)
         
     }
+    
+    @objc func minusTapped(_ sender: UITapGestureRecognizer) {
+        print("minusTapped index: \(cellIndex[0])")
+        //print("\(cellIndex[0])")
+        print("\(CartCell.numberArray[cellIndex[0]])")
+        print("\(CartCell.itemPrice[cellIndex[0]])")
+    }
+    
+    @objc func plusTapped(_ sender: UITapGestureRecognizer) {
+        print("plusTapped \(cellIndex[0])")
+        //print("\(cellIndex[0])")
+        print("\(CartCell.numberArray[cellIndex[0]])")
+        print("\(CartCell.itemPrice[cellIndex[0]])")
+    }
+    
 }

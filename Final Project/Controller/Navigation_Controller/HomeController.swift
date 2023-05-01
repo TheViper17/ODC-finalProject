@@ -113,6 +113,9 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
         if collectionView == self.categoriesCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesCell.ID, for: indexPath) as! CategoriesCell
             cell.categoryTitle.text = HomeController.categoryNames[indexPath.row].name
+            if indexPath.section == 0 && indexPath.row == 0 {
+                cell.cellSelection()
+            }
             return cell
             
         }else {
@@ -137,10 +140,32 @@ extension HomeController : UICollectionViewDataSource , UICollectionViewDelegate
         if collectionView == categoriesCollectionView {
             print("maincollectionviewtapped")
             getCategoriesDetailes(index: HomeController.categoryNames[indexPath.row].id)
+            
+            if let selectedCell = collectionView.cellForItem(at: indexPath) as? CategoriesCell {
+                selectedCell.cellSelection()
+            }
+            
         }else{
             print("go to categories page to select an item")
         }
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        if collectionView == categoriesCollectionView {
+            print("maincollectionviewtapped")
+            
+            if let cellToDeselect = collectionView.cellForItem(at: indexPath) as? CategoriesCell {
+                cellToDeselect.cellDeselection()
+            }
+
+            
+        }else{
+            print("go to categories page to select an item")
+        }
+    }
+    
+    
     
 }

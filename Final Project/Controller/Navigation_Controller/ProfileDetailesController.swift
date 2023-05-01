@@ -77,6 +77,7 @@ class ProfileDetailesController: UIViewController {
     @IBAction func saveTapped(_ sender: UIButton) {
         UserDefaults.standard.set(self.emailTextfield.text, forKey: "emailField")
         UserDefaults.standard.set(self.nameTextfield.text, forKey: "nameField")
+        print("Saved")
     }
     
     

@@ -10,7 +10,9 @@ import UIKit
 class HostController: UIViewController {
     
     static let ID = String(describing: HostController.self)
+    
     @IBOutlet weak var hostView: UIView!
+    @IBOutlet weak var navigationBarOutlet: UIStackView!
     
     var currentVC = HomeController.ID{
         didSet{
